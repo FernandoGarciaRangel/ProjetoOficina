@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento de Serviços</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="titulo">Sistema de Gerenciamento de Serviços</h1>
+            <h2 class="titulo-cliente">Área do Cliente</h2>
+            <p class="subtitulo">Acesse todos os nossos serviços em um só lugar</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="grid-servicos">
+            <!-- Cadastro de Cliente -->
+            <div class="servico" id="cadastro-cliente">
+                <h2 class="servico-titulo">
+                    <i>👤</i>Cadastro
+                </h2>
+                <p class="servico-descricao">
+                    Preencha o formulário abaixo para realizar seu cadastro em nosso sistema.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn">Cadastrar</button>
+                </form>
+            </div>
+            
+            <!-- Consulta de Ordem de Serviço -->
+            <div class="servico" id="consulta-os">
+                <h2 class="servico-titulo">
+                    <i>🔍</i> Consultar Ordem de Serviço
+                </h2>
+                <p class="servico-descricao">
+                    Digite o número da sua ordem de serviço para verificar o status atual.
+                </p>
+              
+                    <div class="form-group">
+                        <label for="numero-os">Número da OS:</label>
+                        <input type="text" id="numero-os" class="form-control" required>
+                        <button type="submit" class="btn">Consultar</button>
+                        
+                    </div>
+            </div>
+            
+            <!-- Solicitação de Cancelamento -->
+            <div class="servico" id="cancelamento">
+                <h2 class="servico-titulo">
+                    <i>❌</i> Solicitar Cancelamento
+                </h2>
+                <p class="servico-descricao">
+                    Preencha o formulário abaixo para solicitar o cancelamento de um serviço.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <label for="numero-contrato">Número do Contrato:</label>
+                        <input type="text" id="numero-contrato" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivo">Motivo do Cancelamento:</label>
+                        <textarea id="motivo" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-perigo">Solicitar Cancelamento</button>
+                </form>
+            </div>
+            
+            <!-- Contratação de Serviço -->
+            <div class="servico" id="contratacao">
+                <h2 class="servico-titulo">
+                    <i>✅</i> Contratar Serviço
+                </h2>
+                <p class="servico-descricao">
+                    Escolha um dos nossos serviços disponíveis para contratação.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <label for="tipo-servico">Tipo de Serviço:</label>
+                        <select id="tipo-servico" class="form-control" required>
+                            <option value="">Selecione um serviço</option>
+                            <option value="manutencao">Manutenção</option>
+                            <option value="instalacao">Instalação</option>
+                            <option value="consultoria">Consultoria</option>
+                            <option value="suporte">Suporte Técnico</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">Descrição da Necessidade:</label>
+                        <textarea id="descricao" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Solicitar Orçamento</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="container">
+        <p>&copy; 2025 Sistema de Gerenciamento de Serviços. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
