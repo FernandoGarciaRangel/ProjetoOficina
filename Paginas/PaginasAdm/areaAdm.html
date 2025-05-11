@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Administrador</title>
+    <link rel="stylesheet" href="areaAdm.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="titulo">Área do Administrador</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2 class="subtitulo">Gerenciar Mecânicos</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nome">Matrícula  do Mecânico:</label>
+                    <input type="text" id="matricula" name="matricula" required>
+                    <button type="submit" class="btn">Consultar</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <h2 class="subtitulo">Gerenciar Ordens de Serviço</h2>
+            <form>
+                <div class="form-group">
+                    <label for="os">Ordens de Serviço disponíveis:</label>
+                    <select id="os" name="os" required>
+                        <option value="">Selecione uma OS</option>
+                        <option value="1">OS 1</option>
+                        <option value="2">OS 2</option>
+                        <option value="3">OS 3</option>
+                    </select>
+                    <button type="submit" class="btn">Gerenciar</button>
+                </div>
+            </form>
+            <div>
+                <h2 class="subtitulo">Gerenciamento de Clientes</h2>
+                <label for="nome">Consultar Cliente:</label>
+                <input type="text" id="nome" name="nome" required>
+                <button type="submit" class="btn">Consultar</button>
+                <br>
+                <button type="submit" class="btn">Registrar Cliente</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+
+
