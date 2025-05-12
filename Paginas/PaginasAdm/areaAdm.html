@@ -16,38 +16,49 @@
         <div class="container">
             <!-- Gerenciar Mecânicos -->
             <h2 class="subtitulo">Gerenciar Mecânicos</h2>
-            <form>
-                <div class="form-group">
-                    <label for="matricula">Matrícula do Mecânico:</label>
-                    <input type="text" id="matricula" name="matricula" required>
+            <div class="form-group">
+                <label for="matricula">Matrícula do Mecânico:</label>
+                <input type="text" id="matricula" name="matricula" required>
+                <div class="acao-btns">
                     <button type="submit" class="btn">Consultar</button>
                     <button type="button" class="btn">Registrar Novo Mecânico</button>
                 </div>
-            </form>
+            </div>
 
             <!-- Gerenciar Ordens de Serviço -->
             <h2 class="subtitulo">Gerenciar Ordens de Serviço</h2>
-            <form>
-                <div class="form-group">
-                    <label for="os">Ordens de Serviço disponíveis:</label>
-                    <select id="os" name="os" required>
-                        <option value="">Selecione uma OS</option>
-                        <option value="1">OS 1</option>
-                        <option value="2">OS 2</option>
-                        <option value="3">OS 3</option>
-                    </select>
+            <div class="form-group">
+                <label for="os">Ordens de Serviço disponíveis:</label>
+                <select id="os" name="os" required>
+                    <option value="">Selecione uma OS</option>
+                    <option value="1">OS 1</option>
+                    <option value="2">OS 2</option>
+                    <option value="3">OS 3</option>
+                </select>
+                <div class="acao-btns">
                     <button type="submit" class="btn">Gerenciar</button>
                 </div>
-            </form>
+            </div>
 
             <!-- Gerenciamento de Clientes -->
             <h2 class="subtitulo">Gerenciamento de Clientes</h2>
             <div class="form-group">
-                <label for="nome">Consultar Cliente:</label>
-                <input type="text" id="nome" name="nome" required>
+                <label for="nome-cliente">Consultar Cliente:</label>
+                <input type="text" id="nome-cliente" name="nome-cliente" required>
                 <div class="acao-btns">
                     <button type="submit" class="btn">Consultar</button>
-                    <button type="submit" class="btn">Registrar Cliente</button>
+                    <button type="button" class="btn">Registrar Novo Cliente</button>
+                </div>
+            </div>
+
+            <!-- Gerenciar Produtos -->
+            <h2 class="subtitulo">Gerenciar Produtos</h2>
+            <div class="form-group">
+                <label for="codigo-produto">Código do Produto:</label>
+                <input type="text" id="codigo-produto" name="codigo-produto" required>
+                <div class="acao-btns">
+                    <button type="submit" class="btn">Consultar</button>
+                    <button type="button" class="btn">Registrar Novo Produto</button>
                 </div>
             </div>
         </div>

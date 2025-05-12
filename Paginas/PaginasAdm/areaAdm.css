@@ -131,6 +131,7 @@ select {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    margin-top: 0.5rem;
 }
 
 /* Estilos da seção de consulta */
