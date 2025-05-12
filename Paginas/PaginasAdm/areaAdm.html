@@ -14,16 +14,18 @@
     </header>
     <main>
         <div class="container">
+            <!-- Gerenciar Mecânicos -->
             <h2 class="subtitulo">Gerenciar Mecânicos</h2>
             <form>
                 <div class="form-group">
-                    <label for="nome">Matrícula  do Mecânico:</label>
+                    <label for="matricula">Matrícula do Mecânico:</label>
                     <input type="text" id="matricula" name="matricula" required>
                     <button type="submit" class="btn">Consultar</button>
+                    <button type="button" class="btn">Registrar Novo Mecânico</button>
                 </div>
             </form>
-        </div>
-        <div>
+
+            <!-- Gerenciar Ordens de Serviço -->
             <h2 class="subtitulo">Gerenciar Ordens de Serviço</h2>
             <form>
                 <div class="form-group">
@@ -37,13 +39,16 @@
                     <button type="submit" class="btn">Gerenciar</button>
                 </div>
             </form>
-            <div>
-                <h2 class="subtitulo">Gerenciamento de Clientes</h2>
+
+            <!-- Gerenciamento de Clientes -->
+            <h2 class="subtitulo">Gerenciamento de Clientes</h2>
+            <div class="form-group">
                 <label for="nome">Consultar Cliente:</label>
                 <input type="text" id="nome" name="nome" required>
-                <button type="submit" class="btn">Consultar</button>
-                <br>
-                <button type="submit" class="btn">Registrar Cliente</button>
+                <div class="acao-btns">
+                    <button type="submit" class="btn">Consultar</button>
+                    <button type="submit" class="btn">Registrar Cliente</button>
+                </div>
             </div>
         </div>
     </main>

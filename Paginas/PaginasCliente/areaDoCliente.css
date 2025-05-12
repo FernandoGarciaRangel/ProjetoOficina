@@ -54,7 +54,8 @@ label {
     font-weight: bold;
 }
 
-input[type="text"] {
+input[type="text"],
+textarea {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid #ddd;
@@ -63,10 +64,16 @@ input[type="text"] {
     margin-bottom: 1rem;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+textarea:focus {
     outline: none;
     border-color: #3498db;
     box-shadow: 0 0 5px rgba(52,152,219,0.3);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
 .btn {
