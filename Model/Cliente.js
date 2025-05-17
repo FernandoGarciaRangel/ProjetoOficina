@@ -44,7 +44,7 @@ import ModelError from "/model/ModelError.js";
       throw new ModelError("O Nome do Cliente não pode ser nulo!");
     if (nome.length > 40) 
       throw new ModelError("O Nome do Cliente deve ter até 40 caracteres!");
-    const padraoNome = /[A-Z][a-z] */;
+    const padraoNome = /^[A-Za-zÀ-ÿ ]+$/;
     if (!padraoNome.test(nome)) 
       throw new ModelError("O Nome do Cliente só pode conter letras !");
   }
