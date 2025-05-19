@@ -1,3 +1,50 @@
+Representação Hierárquica
++---"usuarios"
+|   +---$uid
+|   |   +---"uid"
+|   |   +---"email"
+|   |   +---"funcao" (ADMIN, CLIENTE ou MECANICO)
+|
++---"clientes"
+|   +---$uid
+|   |   +---"cpf"
+|   |   +---"telefone"
+|   |   +---"nome"
+|
++---"mecanicos"
+|   +---$uid
+|   |   +---"matricula"
+|   |   +---"nome"
+|
++---"veiculos"
+|   +---$placa
+|   |   +---"placa"
+|   |   +---"modelo"
+|   |   +---"marca"
+|   |   +---"idCliente"
+|
++---"oss" (Ordens de Serviço)
+|   +---$osId
+|   |   +---"preco"
+|   |   +---"dataInicio"
+|   |   +---"dataFim" (implícito nas regras de indexação)
+|   |   +---"descricao"
+|   |   +---"idVeiculo"
+|   |   +---"idMecanico"
+|   |   +---"itens"
+|   |   |   +---$itemId
+|   |   |   |   +---"precoProd"
+|   |   |   |   +---"quantidade"
+|   |   |   |   +---"precoPraticado"
+|   |   |   |   +---"idProduto"
+|
++---"produtos"
+    +---$codigo
+        +---"codigo"
+        +---"quantidade"
+        +---"nome"
+        +---"precoAtual"
+
 {
   "rules": {
     /***** REGRAS GERAIS *****/
@@ -98,16 +145,10 @@
         ".write": "root.child('usuarios').child(auth.uid).child('funcao').val() === 'MECANICO' && newData.child('idMecanico').val() === auth.uid",
         
         /***** ITENS DA OS *****/
-	//Não rescrever read e write abaixo pois ja está no nivel acima 
         "itens": {
           "$itemId": {
             /*---- Validação: deverá ter precoProd, quantidade e precoPraticado ----*/
-            ".validate": "newData.hasChildren(['precoProd','quantidade','precoPraticado','idProduto'])",
-            /*---- Leitura: Se for MECANICO atrelado à OS ou CLIENTE dono do veículo ----*/
-            ".read": "(root.child('usuarios').child(auth.uid).child('funcao').val() === 'MECANICO' && root.child('os').child($osId).child('idMecanico').val() === auth.uid) || (root.child('usuarios').child(auth.uid).child('funcao').val() === 'CLIENTE' && root.child('veiculos').child(root.child('os').child($osId).child('idVeiculo').val()).child('idCliente').val() === auth.uid)",
-            /*---- Escrita: Se for MECANICO atrelado à OS ----*/
-            ".write": "root.child('usuarios').child(auth.uid).child('funcao').val() === 'MECANICO' && root.child('os').child($osId).child('idMecanico').val() === auth.uid"
-          }
+            ".validate": "newData.hasChildren(['precoProd','quantidade','precoPraticado','idProduto'])"
         }
       }
     },
@@ -125,10 +166,6 @@
       "$codigo": {
         /*---- Validação: deverá ter as entradas codigo, quantidade, nome e precoAtual ----*/
         ".validate": "newData.hasChildren(['codigo','quantidade','nome','precoAtual']) && newData.child('codigo').val() === $codigo",
-        /*---- Leitura: qualquer usuário autenticado ----*/
-        ".read": "auth != null",
-        /*---- Escrita: apenas ADMIN ----*/
-        ".write": "root.child('usuarios').child(auth.uid).child('funcao').val() === 'ADMIN' || root.child('usuarios').child(auth.uid).child('funcao').val() === 'MECANICO'"
       }
     }
   }
